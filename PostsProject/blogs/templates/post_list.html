@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}Blog Posts{% endblock %}
+
+{% block content %}
+    <h1>Blog Posts</h1>
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" id="searchInput" placeholder="Search by title or content">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" onclick="searchPosts()">Search</button>
+        </div>
+    </div>
+    {% for post in posts %}
+        <div class="card mt-3">
+            <div class="card-body">
+                <h5 class="card-title">{{ post.title }}</h5>
+                <p class="card-text">{{ post.content }}</p>
+                <p class="card-text">Author: {{ post.author.username }}</p>
+                <p class="card-text">Created at: {{ post.created_at }}</p>
+
+                {# Display Edit and Delete options if the user is the author #}
+                {% if user.is_authenticated and user == post.author %}
+                    <p><a href="{% url 'post_edit' post.pk %}">Edit Post</a> | <a href="{% url 'post_delete' post.pk %}">Delete Post</a></p>
+                {% endif %}
+
+                {# Display comments for the post #}
+                <h6>Comments:</h6>
+                {% for comment in post.comments.all %}
+                    <p>{{ comment.text}} - {{ comment.author.username }}</p>
+                {% endfor %}
+
+                {# Display ratings for the post #}
+                <h6>Ratings:</h6>
+                {% for rating in post.ratings.all %}
+                    <p>{{ rating.value }} Stars - {{ rating.user.username }}</p>
+                {% endfor %}
+            </div>
+
+            <div style="display: inline-block;">
+                <a href="{% url 'add_comment_to_post' post.pk %}">
+                  <button type="submit" class="btn btn-primary">Add Comment</button>
+                </a>
+                <a href="{% url 'rate_post' post.pk %}">
+                  <button type="submit" class="btn btn-warning" style="display: inline-block; margin-left: 10px;">Rate</button>
+                </a>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,155 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.nav-link {
+    color: #007bff !important;
+}
+
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+
+.login-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    align-items: center;
+    height: 70vh;
+    background-image: url('/static/blog/images/login-image.png'); 
+}
+
+.signup-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 90vh;
+    background-image: url('/static/blog/images/signup-image.png'); 
+}
+
+.login-form {
+    width: 50%;
+    padding: 2rem;
+    background-color: rgba(39, 178, 87, 0.4);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-right: 2rem;
+    align-items: center;
+}
+
+.signup-form {
+    background-color:transparent;
+    width: 45%;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-right: 2rem;
+    align-items: center;
+}
+.login-form:hover{
+
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); 
+    background-color: rgb(151, 255, 135);/* Add hover shadow effect */
+}
+
+
+
+.signup-form:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); 
+    background-color: rgb(200, 165, 106);/* Add hover shadow effect */
+}
+form {
+
+    width: 100%;
+    padding: 1px;
+    margin-top: 1px;
+    margin-bottom: 2px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    /* box-sizing: border-box; */
+}
+
+
+/* Navbar styles */
+.navbar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.nav-link {
+    color: #007bff !important;
+}
+
+/* Form group styling */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+
+
+
+/* Button styling */
+button {
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Hover transition */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Add this style to your CSS file */
+.rating-input {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1em;
+    height: 1em;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    margin: 0 0.1em;
+    cursor: pointer;
+}
+
+.rating-input:checked {
+    background-color: #007bff;
+    border: 1px solid #007bff;
+    color: #fff;
+}

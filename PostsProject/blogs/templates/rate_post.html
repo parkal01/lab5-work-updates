@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Comment{% endblock %}
+
+{% block content %}
+    <h1>Rate Post - {{ post.title }}</h1>
+    <form id="ratingForm" method="post" action="{% url 'rate_post' post.pk %}">
+        {% csrf_token %}
+        <label for="rating">Rate this post:</label><br>
+        <select name="rating" id="rating">
+            <option value="1">1 - Poor</option>
+            <option value="2">2 - Fair</option>
+            <option value="3">3 - Average</option>
+            <option value="4">4 - Good</option>
+            <option value="5">5 - Excellent</option>
+        </select><br><br>
+        <button type="submit">Submit Rating</button>
+    </form>
+
+
+    {% endblock %}
